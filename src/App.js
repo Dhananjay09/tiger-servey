@@ -1,26 +1,26 @@
-import React from 'react';
+import React,{useState} from 'react';
 import logo from './logo.svg';
+import { makeStyles } from '@material-ui/core/styles';
 import './App.css';
+import CreateServey from './CreateServey';
+import TakeServey from './TakeServey';
+import Landing from './Landing'
 
 function App() {
+  const [flag, setFlag] = useState(0);
+  const update=(value)=>{
+    setFlag(value)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+      {(flag===0) && <Landing update={update}/>}
+      {flag===2 && <CreateServey/>}
+      {flag===1 && <TakeServey/>}
+      </div>
     </div>
-  );
+
+  );                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 }
 
 export default App;
