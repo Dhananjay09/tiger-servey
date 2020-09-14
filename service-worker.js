@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/tiger-servey/precache-manifest.75a472ccc1cae8a5e96d6d516811de65.js"
+  "/tiger-servey/precache-manifest.9523aa309972faef7f3bc4e0eb298173.js"
 );
 
 self.addEventListener('message', (event) => {
