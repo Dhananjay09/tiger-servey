@@ -11,16 +11,16 @@ const ShowAllQuestion=(props)=>{
                     {props.data[data].question}
                 </h2>
                 <h4 size="lg">
-                <Checkbox label={props.data[data].answer1} /> 
+             {props.data[data].answer1 &&  <Checkbox label={props.data[data].answer1} /> }
                 </h4>
                 <h4 size="lg">
-                <Checkbox label={props.data[data].answer2} /> 
+                {props.data[data].answer2    && <Checkbox label={props.data[data].answer2} /> }
                 </h4>
                 <h4 size="lg">
-                <Checkbox label={props.data[data].answer3} />   
+             {props.data[data].answer3 && <Checkbox label={props.data[data].answer3} />}   
                 </h4>
                 <h4 size="lg">
-                <Checkbox label={props.data[data].answer4} />   
+             {props.data[data].answer4 &&   <Checkbox label={props.data[data].answer4} />}   
                 </h4>
             </div>  
              )

@@ -7,8 +7,8 @@ import ShowAllQuestion from './ShowAllQuestion'
 import { Form,Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 
 const options = [
-    { value: 'Multi', label: 'Multi select' },
-    { value: 'Single', label: 'Single select' },
+    { value: "Multi", label: 'Multi select' },
+    { value: "Single", label: 'Single select' },
   ];
   class TakeServey extends React.Component {
     constructor(){
@@ -30,11 +30,21 @@ const options = [
       
     }
     addsecondanswer = (answer)=> {
-      this.setState({...this.state,  multi1: {
-        ...this.state.multi1,
-        "answer2": answer,
-        "answer3": 1
-      }})
+      if(this.state.option==="Multi"){
+        this.setState({...this.state,  multi1: {
+          ...this.state.multi1,
+          "answer2": answer,
+          "answer3": 1
+        }})
+      }
+      else{
+        this.setState({...this.state,  multi1: {
+          ...this.state.multi1,
+          "answer2": answer,
+          "submit": 1
+        }})
+      }
+      
     }
     addthirdanswer = (answer)=> {
       this.setState({
@@ -95,7 +105,7 @@ const options = [
         {this.state.multi1.submit!==undefined  && <Button style={{background: "red"}} onClick={()=> this.update()}> Add Question</Button>}
         {this.state.multi1.submit!==undefined && <Button style={{background: "red"}}  onClick={ ()=> this.callforsubmit() } > Publish</Button>}</div>}
         
-
+         
         </React.Fragment>
       );
     }
