@@ -10,7 +10,7 @@ const FirstAnswer=(props)=>{
                 <input type="text" class="form-control" placeholder="Answer" onChange={(e)=> setAnswer(e.target.value)}/>
                     <div class="input-group-append">
                     <span class="input-group-text"  onClick={(e)=>{props.addsubanswer(answer)}}> + </span>
-                    <span class="input-group-text" onClick={()=> alert("- pressed")}> - </span>
+                    <span class="input-group-text" onClick={()=> {props.remove(props.id)}}> - </span>
             </div>
                 </div>
             </div>

@@ -81,6 +81,42 @@ const options = [
       })
     }
 
+    removeAnswerOption=(answer)=>{
+      if(answer==="answer1"){
+        this.setState({
+          ...this.state, 
+          multi1 : {
+            ...this.state.multi1, "answer1" : undefined
+          }
+        }) 
+      }
+      else if(answer==="answer2"){
+        this.setState({
+          ...this.state, 
+          multi1 : {
+            ...this.state.multi1, "answer2" : undefined
+          }
+        }) 
+      }
+      else if(answer==="answer3"){
+        this.setState({
+          ...this.state, 
+          multi1 : {
+            ...this.state.multi1, "answer3" : undefined
+          }
+        }) 
+      }
+      else if (answer==="answer4"){
+        this.setState({
+          ...this.state, 
+          multi1 : {
+            ...this.state.multi1, "answer4" : undefined
+          }
+        }) 
+      }
+     
+    }
+
     handleChange = selectedOption => {
       this.setState( { ...this.state,selectedOption: selectedOption, option: selectedOption.value });
     };
@@ -98,13 +134,13 @@ const options = [
         </div>
 
       {this.state.callforsubmit===1 ? <ShowAllQuestion data={this.state.questions}/> :  <div>     
-        {this.state.option!=="" && <InputQuestion addquestion={this.handlequestion}/>}
-        {this.state.multi1.answer2!==undefined && <FirstAnswer addsubanswer={this.addsecondanswer}/>}
-        {this.state.multi1.answer3!==undefined && <FirstAnswer addsubanswer={this.addthirdanswer}/>}
-        {this.state.multi1.answer4!==undefined && <FirstAnswer addsubanswer={this.addforthanswer}/>}
+        {this.state.option!=="" && <InputQuestion addquestion={this.handlequestion} remove={this.removeAnswerOption} id="answer2"/>}
+        {this.state.multi1.answer2!==undefined && <FirstAnswer addsubanswer={this.addsecondanswer} remove={this.removeAnswerOption} id="answer2"/>}
+        {this.state.multi1.answer3!==undefined && <FirstAnswer addsubanswer={this.addthirdanswer} remove={this.removeAnswerOption} id="answer3"/>}
+        {this.state.multi1.answer4!==undefined && <FirstAnswer addsubanswer={this.addforthanswer} remove={this.removeAnswerOption} id="answer4"/>}
         {this.state.multi1.submit!==undefined  && <Button style={{background: "red"}} onClick={()=> this.update()}> Add Question</Button>}
         {this.state.multi1.submit!==undefined && <Button style={{background: "red"}}  onClick={ ()=> this.callforsubmit() } > Publish</Button>}</div>}
-        
+        {console.log(this.state)}
          
         </React.Fragment>
       );
